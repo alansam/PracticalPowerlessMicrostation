@@ -57,31 +57,39 @@ int main() {
   std::cout << std::endl;
 
   std::string cl1(cl);
+  size_t cl1_l = cl1.size();
   std::string CL1(CL);
-  std::cout << cl1.size() << '\n';
+  size_t CL1_l = CL1.size();
+  std::cout << cl1_l << '\n';
   utf8(cl1);
-  std::cout << CL1.size() << '\n';
+  std::cout << CL1_l << '\n';
   utf8(CL1);
 
   std::string cl2(cl);
+  size_t cl2_l = cl2.size();
   std::string CL2(CL);
-  std::cout << cl2.size() << '\n';
+  size_t CL2_l = CL2.size();
+  std::cout << cl2_l << '\n';
   utf16(cl2);
-  std::cout << CL2.size() << '\n';
+  std::cout << CL2_l << '\n';
   utf16(CL2);
 
   std::string cl3(cl);
+  size_t cl3_l = cl3.size();
   std::string CL3(CL);
-  std::cout << cl3.size() << '\n';
+  size_t CL3_l = CL3.size();
+  std::cout << cl3_l << '\n';
   utf32(cl3);
-  std::cout << CL3.size() << '\n';
+  std::cout << CL3_l << '\n';
   utf32(CL3);
   
   std::string cl4(cl);
+  size_t cl4_l = cl4.size();
   std::string CL4(CL);
-  std::cout << cl4.size() << '\n';
+  size_t CL4_l = CL4.size();
+  std::cout << cl4_l << '\n';
   txform16(cl4);
-  std::cout << CL4.size() << '\n';
+  std::cout << CL4_l << '\n';
   txform16(CL4);
 
   /*
