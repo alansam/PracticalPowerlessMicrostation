@@ -97,17 +97,19 @@ int main() {
    *  @see: https://apps.timwhitlock.info/unicode/inspect/hex/1F468/1F3FF/200D/1F33E
   */
   std::cout 
-    << "\xF0\x9F\x91\xA8\xF0\x9F\x8F\xBF\xE2\x80\x8D\xF0\x9F\x8C\xBE"
+    << "\xF0\x9F\x91\xA8\xF0\x9F\x8F\xBF\xE2\x80\x8D\xF0\x9F\x8C\xBE"s
     << std::endl;
   std::cout 
-    << "\xF0\x9F\x91\xA8" << ' '
-    << "\xF0\x9F\x8F\xBF" << ' '
-    << "\xE2\x80\x8D" << ' '
-    << "\xF0\x9F\x8C\xBE"
+    << "\xF0\x9F\x91\xA8"s << ' '
+    << "\xF0\x9F\x8F\xBF"s << ' '
+    << "\xE2\x80\x8D"s     << ' '
+    << "\xF0\x9F\x8C\xBE"s
     << std::endl;
 }
 
 void utf8(std::string utf8) {
+  std::cout << "Function: "s << __func__ << std::endl;
+
   char const * cs = utf8.c_str();
   size_t utf8_l = std::strlen(cs);
   std::cout << utf8_l << ' ' << utf8.size() << std::endl;
@@ -123,6 +125,8 @@ void utf8(std::string utf8) {
 }
 
 void utf16(std::string utf8) {
+  std::cout << "Function: "s << __func__ << std::endl;
+
   std::u16string utf16;
   utf16 = 
     std::wstring_convert<std::codecvt_utf8_utf16<char16_t>, char16_t>{}
@@ -143,6 +147,8 @@ void utf16(std::string utf8) {
 }
 
 void utf32(std::string utf8) {
+  std::cout << "Function: "s << __func__ << std::endl;
+
   std::u32string utf32 = std::wstring_convert<std::codecvt_utf8<char32_t>, char32_t>{}.from_bytes(utf8);
   std::cout << "UTF32 conversion produced "
             << std::dec
@@ -164,6 +170,8 @@ void utf32(std::string utf8) {
  *  @see: https://dbj.org/c17-codecvt-deprecated-panic/
  */
 void txform16(std::string u8) {
+  std::cout << "Function: "s << __func__ << std::endl;
+
   std::cout << u8.size() << '\n' << u8 << '\n';
   std::u16string u16 = transform_to<std::u16string, std::string>(u8);
   std::cout << "UTF-8 transformed from " << u8.size()
